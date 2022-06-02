@@ -95,7 +95,7 @@ def convert():
 
         fbp = np.loadtxt(files[i],skiprows=1,usecols=(1))
 
-        fbp = fbp/10.**22
+        fbp = fbp
         #print(len(fbp))#
         #print(xp_design_matrices['bp'])
         bp_coef, r, rank, s  = np.linalg.lstsq(xp_design_matrices['bp']._get_design_matrix().T,fbp)
@@ -105,7 +105,7 @@ def convert():
 
         frp = np.loadtxt(rp_f,skiprows=1,usecols=(1))
 
-        frp = frp/10.**22
+        frp = frp
         rp_coef, r, rank, s = np.linalg.lstsq(xp_design_matrices['rp']._get_design_matrix().T,frp)
 
         rp_coefs.append(rp_coef)
